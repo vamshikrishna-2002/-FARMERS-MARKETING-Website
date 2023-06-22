@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,600;0,700;0,800;1,200;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/82e1d6b1a3.js" crossorigin="anonymous"></script>
+  </head>
+  <style>
+      body {
+  margin: 0;
+  counter-reset: section;
+  height: 100%;
+}
+
+.brand {
+  position: fixed;
+  margin-top: 0px;
+  padding-top: 0px;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  opacity: 90%;
+  box-shadow: 0px 2px 47px -8px rgba(0,0,0,0.65);
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search {
+  color: #129e8d;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin-left: 25px;
+/*   grid-row-start: 1;
+  grid-row-end: 1; */
+}
+
+#profileControl {
+color: #129e8d;
+  font-size: 23px;
+  padding: 10px 10px;
+  margin-right: 25px;
+}
+
+#profileControl:hover {
+  background-image: linear-gradient(to right, #17a297 , #29b786);
+  color: white;
+  border-radius: 50%;
+}
+  
+#search:hover {
+  background-image: linear-gradient(to right, #17a297 , #29b786);
+  color: white;
+  border-radius: 50%;
+}
+
+#logo {
+  font-size: 24px;
+  color: #29b786;
+  
+/*   grid-row-start: 1;
+  grid-row-end: 3; */
+  justify-self: center;
+}
+
+.menu {
+  
+/*   grid-row-start: 1;
+  grid-row-end: 3; */
+  justify-self: end;
+}
+
+.menu ul {
+  display: flex;
+  margin-right: 25px;
+}
+
+.menu ul li {
+  font-family: "Arial Rounded MT Bold";
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #129e8d;
+  padding: 7px 20px;
+}
+
+li a:hover {
+  background-image: linear-gradient(to right, #17a297 , #29b786);
+  padding: 7px 20px;
+  color: white;
+  text-decoration: strong;
+  border-radius: 25px;
+}
+
+.One {
+   grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.Two {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+}
+
+.Three {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  justify-self: end;
+}
+
+.introHeader {
+  font-family: 'Sarabun', sans-serif;
+  font-style: bold;
+  font-size: 60px;
+  text-align: center;
+  color: #21BB86;
+  margin-top: 100px;
+}
+
+
+/* FORM STYLING ___________________________________________________ */
+* {
+  box-sizing: border-box;
+}
+
+.uploadPicture {
+  background-color: #e3e3e3;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+  border-radius: 15px;
+  margin-top: 15px;
+  justify-content: flex-start;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+#regForm {
+  background-color: #F4F4F4;
+  margin: 100px auto;
+  margin-bottom: 250px;
+  font-family: 'Sarabun', Helvetica, sans serif;
+  padding: 40px;
+  width: 40%;
+  min-width: 300px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 24px 43px 5px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 24px 43px 5px rgba(0,0,0,0.25);
+box-shadow: 0px 24px 43px 5px rgba(0,0,0,0.25);
+}
+
+#dateField {
+  width: 50%;
+}
+
+.formFields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+#datesOfWork input {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+#subMain {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  text-align: left;  
+  color: #129E8C;
+  font-size: 32px;
+  margin-left: 30px;
+  padding-bottom: 20px;
+}
+
+.talentForm p {
+  color: grey;
+  font-style: oblique;
+  margin: 5px 20px;
+  padding: 10px;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  margin-left: -20px;
+  margin-top: 5px;
+  padding: 5px 20px;
+  width: 115%;
+  font-size: 17px;
+  font-family: 'Open Sans', Helvetica, sans serif;
+  border: none;
+  border: 2px solid #c7c8ca;
+  border-radius: 50px;
+}
+
+form:focus, input:focus{
+    outline: none;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-image: linear-gradient(to right, #17a297 , #29b786);
+  color: #ffffff;
+  border: none;
+  padding: 7px 20px;
+  width: 125px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-family: 'Open Sans', Helvetica, sans serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+#plus {
+  color: #21BB86;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#uploadLink {
+  color: #21BB86;
+  text-align: center;
+  margin: 0;
+}
+
+.talentForm {
+  margin-bottom: 155px;
+}
+
+/* END ____________________________ */
+
+
+/* SIDEBAR STYLING ___________________________________ */
+.sidebar {
+  position: fixed;
+  background-color: #F0F0F0;
+  width: 225px;
+  border-radius: 25px;
+  padding-top: 40px;
+  padding-left: 35px;
+  padding-bottom: 20px;
+  margin-left: 45px;
+}
+
+
+.sidebarNav {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarNav a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #21BB86;
+  text-decoration: none;
+  margin-bottom: 35px;
+}
+
+/* PROFILE CONTENT STYLING ____________________________ */
+.profilePage {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 100%;
+}
+
+.profileContent {
+  margin-left: 350px;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 150px;
+}
+
+#profileImage {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.generalHeader {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+.nameAndContact {
+  margin-left: 25px;
+}
+
+.userFullName {
+  font-family: Helvetica, sans serif;
+  font-size: 38px;
+  margin: 0px;
+}
+
+.contactMain {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  font-size: 28px;
+  margin: 0px;
+  padding-top: 10px;
+}
+
+#contactContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+#contactIcon {
+  color: #21BB86;
+  font-size: 28px;
+  padding-right: 10px;
+}
+
+.subsection {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #9F9F9F;
+}
+
+.generalContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subheading {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  text-align: left;  
+  color: black;
+  font-size: 32px;
+  margin-left: 30px;
+}
+
+#pLarge {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  color: black;
+  font-size: 26px;
+  margin-left: 30px;
+}
+
+#pSmall {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  color: black;
+  font-size: 22px;
+  margin-left: 30px;
+}
+
+.workHistoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#workHistoryContent {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* DASHBOARD STYLING ___________________________________________________ */
+.dashboardLeft {
+  margin-left: 325px;
+  margin-top: -25px;
+}
+
+.dashboardRight {
+  margin-top: -25px;
+}
+
+.dashboardBlock {
+-webkit-box-shadow: 0px 9px 28px -4px rgba(0,0,0,0.23);
+-moz-box-shadow: 0px 9px 28px -4px rgba(0,0,0,0.23);
+box-shadow: 0px 9px 28px -4px rgba(0,0,0,0.23);
+ width: 35vw;
+  height: 350px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .profilePage {
+      flex-direction: column;
+  }
+  .dashboardRight {
+  margin-top: -25px;
+  margin-left: 325px;
+}
+  .dashboardBlock {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+  .profilePage {
+    align-items: center;
+  }
+  .dashboardLeft {
+    margin-top: -25px;
+    margin-left: 45px;
+  }
+  .dashboardRight {
+    margin-top: -25px;
+    margin-left: 45px;
+  }
+  .dashboardBlock {
+    width: 85vw;
+  }
+  .introHeader {
+    font-size: 48px;
+  }
+}
+
+.dashboardBlock h2 {
+  padding-top: 25px;
+  padding-left: 5px;
+}
+
+#myRating p {
+  font-family: 'Sarabun', Helvetica, sans serif;
+  color: #696969;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 18px;
+}
+
+.ratingScale {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  width: 75%;
+  margin: auto;
+}
+
+.ratingScale i {
+  margin: 10px;
+  font-size: 3vw;
+  color: #20BB86;
+}
+
+
+.listBlock {
+  display: flex;
+  border-radius: 7px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F0F0F0;
+  width: 87%;
+  margin: auto;
+  margin-bottom: 10px;
+  height: 65px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.listBlock h4 {
+  font-family: "Arial Rounded MT Bold", Helvetica, sans serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.listBlock p {
+  font-family: "Sarabun", Helvetica, sans serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+}
+
+.time {
+  width: 75px;
+}
+
+.time p {
+  font-style: italic;
+}
+
+
+
+.donut-container {
+    width: 200px;
+    height: 200px;
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:50%;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-top: -10px;
+}
+
+.donut-inner {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background: #FFF;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.donut-label {
+    line-height: 170px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Sarabun', Helvetica, sans serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* FOOTER STYLING ___________________________________________________ */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+   background-image: linear-gradient(to right, #17a297 , #29b786);
+  margin-top: 50px;
+}
+
+.secondaryNav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+  padding-left: 50px;
+}
+
+.secondaryNav a {
+  overflow: hidden;
+  text-decoration: none;
+  font-family: 'Sarabun', sans-serif;
+  color: white;
+  padding: 5px 20px;
+}
+
+.secondaryNav a:hover {
+  padding: 5px 20px;
+  background-color: white;
+  color: #29b786;
+  width: fit-content;
+  border-radius: 25px;
+}
+
+
+  </style>
+  <body>
+     <header class="brand">
+        <div class="One"><i id="search" class="fas fa-search"></i></div>
+      <div class="Two"><i id="logo" class="fas fa-leaf" style="font-size: 30px;"> FarmersMarket </i>
+        
+       </div>
+       <div class="Three">
+      <i id="profileControl" class="fas fa-user"></i>
+       </div>
+    </header>
+    
+     <h1 class="introHeader">Your Dashboard</h1>
+    
+    <div class="profilePage">
+      
+    <div class="sidebar">
+      <nav class="sidebarNav">
+  <a href="/html/">General</a>
+  <a href="/css/">Work History</a>
+  <a href="/js/">Availability</a>
+  <a href="/python/">Notifications</a>
+  <a href="/python/">Account Settings</a>
+  <a href="/python/">Get Help</a>
+  <a href="D:\Farmers market\login.html">Logout</a>
+      </nav>
+    </div>
+    
+      <div class="dashboardLeft">
+        <div id="myRating" class="dashboardBlock">
+          <h2 id="subMain" class="subheading">My Rating</h2>
+          <div class="ratingScale">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>12 Reviews ></p>
+        </div>
+        <div id="upcomingInterviews" class="dashboardBlock">
+          <h2 id="subMain" class="subheading">Upcoming Works</h2>
+          
+          <div class="listBlock">
+            <div class="nameDate">
+              <h4>Person 1</h4>
+              <p>Thrusday, DEC 2, 2021</p>
+            </div>
+            <div class="time">
+              <p>1:00pm - 1:45pm</p>
+            </div>
+          </div>
+          
+          <div class="listBlock">
+            <div class="nameDate">
+              <h4>Person 2</h4>
+              <p>Sunday, DEC 5, 2021</p>
+            </div>
+            <div class="time">
+              <p>11:00am - 11:30am</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="dashboardRight">
+        <div id="profileStatus" class="dashboardBlock">
+          <h2 id="subMain" class="subheading">Profile Status</h2>
+          <div class="donut-container" style="background: #20BB86;">
+    <div class="donut-inner">
+        <div class="donut-label">100%</div>
+    </div>
+</div>
+        </div>
+        <div id="activeOffers" class="dashboardBlock">
+          <h2 id="subMain" class="subheading">Active Works</h2>
+        </div>
+      </div>
+      
+    </div>
+    
+     <footer>
+      <nav class="secondaryNav">
+         <a href="/html/">About Sprout</a>
+  <a href="/css/">Contact Us</a>
+  <a href="/js/">Legal</a>
+  <a href="/python/">Invite Friends</a>
+      </nav>
+      </footer
+  </body>
+  
+</html>

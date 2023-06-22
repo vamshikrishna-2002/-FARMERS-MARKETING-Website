@@ -1,0 +1,136 @@
+<html>
+    <head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins',sans-serif;
+    }
+    
+    header{
+        width: 100%;
+        height: 52px;
+        background:#203A43;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    .Logo{
+        color: white;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Impact;
+        padding-right: 31px;
+    }
+    .nav{
+        display:flex;
+        align-items: center;
+    }
+    .nav ol{
+        display: flex;
+        list-style: none;
+    }
+    .btn{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        -webkit-appearence:none;
+        appearance: none;
+        cursor: pointer;
+        display: none;
+    }
+    .btn::before{
+        content: '\f0c9';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 700;
+        font-size: 2em;
+    }
+    .nav ol li{
+        margin: 1em;
+        padding-left: 5px;
+    }
+    .nav ol li a{
+        text-decoration: none;
+        padding: 0.2em 1.2em 0.9em 1.2em;
+        border-radius: 10px 10px 0 0;
+        color:white;
+        transition: all .4s;
+        position: relative;
+        z-index: 1;
+        font-family:   'Lucida Sans Unicode';
+        font-size: 13px;
+        
+        
+    }
+    .nav ol li a:focus{
+outline:none;
+    }
+    .nav ol li a::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 42.3px;
+        border-radius: 10px 10px 0 0;
+        background: orange;
+        transform-origin: bottom;
+        background: #04F509;
+        opacity: 0.5;
+        transform:scaleY(0.0);
+        z-index:-1;
+        transition: all .4s;
+    }
+    .nav ol li a:hover::before{transform: scaleY(1.1);}
+    .nav ol li a:hover{color:#fff;}
+    .fa{
+        font-size: 28px;
+        padding: 5px ;
+        color:silver;
+    }
+    .fa:hover{
+        color: brown;
+    }
+
+</style>
+<body>
+    <header>
+        <p class="Logo" style="color:#04F509"><i class="fa fa-leaf" style="color: #04F509;"></i>FarmersMarket</p>
+        <input type="checkbox" name="" class="btn">
+        <div class="nav">
+            <ol>
+            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="C:\Farmers market\profile1.html"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="C:\Farmers market\shop.html"><i class="fa fa-cart-arrow-down"></i>Shop</a></li>
+            <li><a href="#"><i class="fa fa-info"></i>About</a></li>
+            <li><a href="C:\Farmers market\profile.html"><i class="fa fa-phone"></i>Contact</a></li>
+            <li><a href="C:\Farmers market\settings.html"><i class="fa fa-cog"></i>Settings</a></li>
+            </ol>
+        </div>
+    </header>
+    
+    
+    <div id="container">
+  
+        <!-- Code generated at https://WeatherWidget.io -->  
+      <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="INDIA" data-label_2="WEATHER" data-theme="orange" >INDIA WEATHER</a>
+      <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+      </script>
+      <!-- / Code generated at https://WeatherWidget.io --> 
+        
+      </div>
+      <img src="C:\app images\a1.jpg" style="width:100%;">
+</body>
+</html>
